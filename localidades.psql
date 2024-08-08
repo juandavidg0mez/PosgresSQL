@@ -90,3 +90,11 @@ INSERT INTO municipio (nombre, id_departamento) VALUES
 ('TUBARA', 2),
 ('USIACURI', 2);
 
+INSERT INTO localidad (nombre, id_municipio) VALUES
+('El Poblado', 1),
+('Laureles', 1),
+('Belen', 1);
+
+
+
+
