@@ -1,0 +1,92 @@
+
+CREATE TABLE pais (
+    id SERIAL PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL
+);
+
+
+CREATE TABLE departamento (
+    id SERIAL PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    id_pais INT NOT NULL,
+    FOREIGN KEY (id_pais) REFERENCES pais(id)
+);
+
+
+CREATE TABLE municipio (
+    id SERIAL PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    id_departamento INT NOT NULL,
+    FOREIGN KEY (id_departamento) REFERENCES departamento(id)
+);
+
+
+CREATE TABLE localidad (
+    id SERIAL PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    id_municipio INT NOT NULL,
+    FOREIGN KEY (id_municipio) REFERENCES municipio(id)
+);
+
+insert into pais (nombre) values ('Colombia');
+
+INSERT INTO departamento (nombre, id_pais) VALUES
+('ANTIOQUIA', 1),
+('ATLANTICO', 1),
+('BOGOTA', 1),
+('BOLIVAR', 1),
+('BOYACA', 1),
+('CALDAS', 1),
+('CAQUETA', 1),
+('CAUCA', 1),
+('CESAR', 1),
+('CORDOBA', 1),
+('CUNDINAMARCA', 1),
+('CHOCO', 1),
+('HUILA', 1),
+('LA GUAJIRA', 1),
+('MAGDALENA', 1),
+('META', 1),
+('NARIÑO', 1),
+('N. DE SANTANDER', 1),
+('QUINDIO', 1),
+('RISARALDA', 1),
+('SANTANDER', 1),
+('SUCRE', 1),
+('TOLIMA', 1),
+('VALLE DEL CAUCA', 1),
+('ARAUCA', 1),
+('CASANARE', 1),
+('PUTUMAYO', 1),
+('SAN ANDRES', 1),
+('AMAZONAS', 1),
+('GUAINIA', 1),
+('GUAVIARE', 1),
+('VAUPES', 1),
+('VICHADA', 1);
+
+INSERT INTO municipio (nombre, id_departamento) VALUES
+('BARRANQUILLA', 2),
+('BARANOA', 2),
+('CAMPO DE LA CRUZ', 2),
+('CANDELARIA', 2),
+('GALAPA', 2),
+('JUAN DE ACOSTA', 2),
+('LURUACO', 2),
+('MALAMBO', 2),
+('MANATI', 2),
+('PALMAR DE VARELA', 2),
+('PIOJO', 2),
+('POLONUEVO', 2),
+('PONEDERA', 2),
+('PUERTO COLOMBIA', 2),
+('REPELON', 2),
+('SABANAGRANDE', 2),
+('SABANALARGA', 2),
+('SANTA LUCIA', 2),
+('SANTO TOMAS', 2),
+('SOLEDAD', 2),
+('SUAN', 2),
+('TUBARA', 2),
+('USIACURI', 2);
+
